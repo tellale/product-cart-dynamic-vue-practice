@@ -1,16 +1,11 @@
 /* eslint-disable */
+/*eslint no-trailing-spaces: ["error", { "skipBlankLines": true }]*/
 <template>
-  <div class="home">
-    <div class="splash-container">
-        <div class="splash">
-          <h1>Splendid Food</h1>
-        </div>
-      </div>
-      <main class="wrapper">
-        <h2>Recommended</h2>
-        <div class="recommended">
+    <main class="wrapper">
+        <h1>Products</h1>
+        <div class="card-container">
           <ProductCart
-            v-for="(product, index) in inventory.slice(0,3)"
+            v-for="(product, index) in inventory.slice(0,6)"
             :key="product.id"
             class="card"
             :index="index"
@@ -19,16 +14,15 @@
           />
         </div>
       </main>
-  </div>
 </template>
 
 <script>
 import ProductCart from '@/components/ProductCart.vue'
 export default {
-  name: 'HomeView',
   props: ['inventory', 'addToCart'],
   components: {
     ProductCart
   }
 }
 </script>
+/* eslint-disable */
